@@ -1,0 +1,151 @@
+html, body {
+    background: url(../v03.gif);
+}
+
+.main-container {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.rows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-left-button {
+    border: 25px solid #333;
+    background: #4CAF50;
+    border-top-left-radius: 100%;
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.top-right-button {
+    border: 25px solid #333;
+    background: #B71C1C;
+    border-top-right-radius: 100%;
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bottom-left-button {
+    border: 25px solid #333;
+    background: #3F51B5;
+    border-bottom-left-radius: 100%;
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bottom-right-button {
+    border: 25px solid #333;
+    background: #FFC107;
+    border-bottom-right-radius: 100%;
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.top-left-button-clicked {
+    background: #4CAF50;
+}
+
+.top-right-button-clicked {
+    background: #F44336;
+}
+
+.bottom-left-button-clicked {
+    background: #4CAF50;
+}
+
+.bottom-right-button-clicked {
+    background: #FFC107;
+}
+
+.center-circle {
+    border-radius: 100%;
+    border: 20px solid #333;
+    background: white;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: auto;
+    text-align: center;
+    font-size: 56px;
+}
+
+.menu-button {
+    display: inline-block;
+}
+
+.counter {
+    border: 5px solid #333;
+    width: 60px;
+    border-radius: 10px;
+    background: #212121;
+}
+
+.led-off {
+    color: #1A237E;
+    margin: 0;
+    font-size: 40px;
+}
+
+.start-button {
+    background-color: #F44336;
+    border: 5px solid #333;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0px 2px 3px #222;
+    cursor: pointer;
+}
+
+.strict-button {
+    background-color: #FFEB3B;
+    border: 5px solid #333;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0px 2px 3px #222;
+    cursor: pointer;
+}
+
+.power-buttons {
+    width: 100%;
+}
+
+.power-switch {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    border: 5px solid #333;
+    border-radius: 5px;
+    vertical-align: top;
+    background: #212121;
+    cursor: pointer;
+}
+
+.switch {
+    background-color: #00C853;
+    width: 50%;
+    height: 100%;
+}

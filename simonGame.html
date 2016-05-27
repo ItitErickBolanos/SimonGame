@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simon Game - FreeCodeCamp</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+        <link href="css/simonGame.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="main-container" ng-app="simonGame">
+            <div class="container" ng-cloak ng-controller="gameController" align="center">
+                <div class="rows">
+                    <div class="top-left-button">
+                    </div>
+                    <div class="top-right-button">
+                    </div>
+                </div>
+                <div class="rows">
+                    <div class="bottom-left-button">
+                    </div>
+                    <div class="bottom-right-button">
+                    </div>
+                </div>
+                <div class="center-circle">
+                    <p style="margin-bottom: 10px">Simon</p>
+                    <div class="menu-button">
+                        <div class="counter">
+                            <p class="led-off">--</p>
+                        </div>
+                        <p style="font-size: 16px">Count</p>
+                    </div>
+                    <div class="menu-button">
+                        <div class="start-button">
+                        </div>
+                        <p style="font-size: 16px">Start</p>
+                    </div>
+                    <div class="menu-button">
+                        <div class="strict-button">
+                        </div>
+                        <p style="font-size: 16px">Strict</p>
+                    </div>
+                    <div class="power-buttons">
+                        <p style="font-size: 16px; display: inline-block; margin: auto; vertical-align: top;">OFF&nbsp;</p>
+                        <div class="power-switch">
+                            <div class="switch">
+                            </div>
+                        </div>
+                        <p style="font-size: 16px; display: inline-block; margin: auto; vertical-align: top;">ON&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="https://use.fontawesome.com/75ecc3166c.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+        <!-- Angular Material Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+        <script type="text/javascript" src="js/simonGame.js"></script>
+    </body>
+</html>
