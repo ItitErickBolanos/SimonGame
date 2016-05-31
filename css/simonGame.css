@@ -42,7 +42,7 @@ html, body {
 
 .bottom-left-button {
     border: 25px solid #333;
-    background: #3F51B5;
+    background: #FFC107;
     border-bottom-left-radius: 100%;
     width: 250px;
     height: 250px;
@@ -52,7 +52,7 @@ html, body {
 
 .bottom-right-button {
     border: 25px solid #333;
-    background: #FFC107;
+    background: #3F51B5;
     border-bottom-right-radius: 100%;
     width: 250px;
     height: 250px;
@@ -60,20 +60,24 @@ html, body {
     cursor: pointer;
 }
 
-.top-left-button-clicked {
-    background: #4CAF50;
+.green, .top-left-button:active {
+    background: #69F0AE;
 }
 
-.top-right-button-clicked {
+.red, .top-right-button:active{
     background: #F44336;
 }
 
-.bottom-left-button-clicked {
-    background: #4CAF50;
+.yellow, .bottom-left-button:active {
+    background: #FFF176;
 }
 
-.bottom-right-button-clicked {
-    background: #FFC107;
+.blue, .bottom-right-button:active{
+    background: #03A9F4;
+}
+
+.unclickable {
+  pointer-events: none;
 }
 
 .center-circle {
@@ -109,6 +113,12 @@ html, body {
     font-size: 40px;
 }
 
+.led-on {
+  color: #2196F3;
+  margin: 0;
+  font-size: 40px;
+}
+
 .start-button {
     background-color: #F44336;
     border: 5px solid #333;
@@ -117,6 +127,10 @@ html, body {
     height: 30px;
     box-shadow: 0px 2px 3px #222;
     cursor: pointer;
+}
+
+.start-button:active {
+    box-shadow: 0px 1px 2px #222;
 }
 
 .strict-button {
@@ -129,8 +143,13 @@ html, body {
     cursor: pointer;
 }
 
+.strict-button:active {
+    box-shadow: 0px 1px 2px #222;
+}
+
 .power-buttons {
-    width: 100%;
+    width: 50%;
+    margin-left: 25%;
 }
 
 .power-switch {
@@ -144,8 +163,15 @@ html, body {
     cursor: pointer;
 }
 
-.switch {
+.switch-off {
     background-color: #00C853;
     width: 50%;
     height: 100%;
+}
+
+.switch-on {
+    background-color: #00C853;
+    width: 50%;
+    height: 100%;
+    margin-left: 50%;
 }

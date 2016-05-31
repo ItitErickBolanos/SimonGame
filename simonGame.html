@@ -11,27 +11,31 @@
         <div class="main-container" ng-app="simonGame">
             <div class="container" ng-cloak ng-controller="gameController" align="center">
                 <div class="rows">
-                    <div class="top-left-button">
+                    <div class="button top-left-button" id="green" ng-class="{ 'unclickable' : !simon.getGameState() }" ng-mousedown="evaluateMoves('green')" ng-mouseup="nextMove('green')">
+                      <audio id="greenSound" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
                     </div>
-                    <div class="top-right-button">
+                    <div class="button top-right-button" id="red" ng-class="{ 'unclickable' : !simon.getGameState() }" ng-mousedown="evaluateMoves('red')" ng-mouseup="nextMove('red')">
+                      <audio id="redSound" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
                     </div>
                 </div>
                 <div class="rows">
-                    <div class="bottom-left-button">
+                    <div class="button bottom-left-button" id="yellow" ng-class="{ 'unclickable' : !simon.getGameState() }" ng-mousedown="evaluateMoves('yellow')" ng-mouseup="nextMove('yellow')">
+                      <audio id="yellowSound" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
                     </div>
-                    <div class="bottom-right-button">
+                    <div class="button bottom-right-button" id="blue" ng-class="{ 'unclickable' : !simon.getGameState() }" ng-mousedown="evaluateMoves('blue')" ng-mouseup="nextMove('blue')">
+                      <audio id="blueSound" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
                     </div>
                 </div>
                 <div class="center-circle">
                     <p style="margin-bottom: 10px">Simon</p>
                     <div class="menu-button">
                         <div class="counter">
-                            <p class="led-off">--</p>
+                            <p ng-class="{ 'led-off' : !simon.getGamePower(), 'led-on' : simon.getGamePower() }">{{ counter }}</p>
                         </div>
                         <p style="font-size: 16px">Count</p>
                     </div>
                     <div class="menu-button">
-                        <div class="start-button">
+                        <div class="start-button" ng-click="startGame()">
                         </div>
                         <p style="font-size: 16px">Start</p>
                     </div>
@@ -42,8 +46,8 @@
                     </div>
                     <div class="power-buttons">
                         <p style="font-size: 16px; display: inline-block; margin: auto; vertical-align: top;">OFF&nbsp;</p>
-                        <div class="power-switch">
-                            <div class="switch">
+                        <div class="power-switch" ng-click="switchGameOn()">
+                            <div ng-class="{ 'switch-off' : !simon.getGamePower(), 'switch-on' : simon.getGamePower() }">
                             </div>
                         </div>
                         <p style="font-size: 16px; display: inline-block; margin: auto; vertical-align: top;">ON&nbsp;</p>
@@ -61,6 +65,7 @@
 
         <!-- Angular Material Library -->
         <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+        <script type="text/javascript" src="js/Classes/Class.SimonGame.js"></script>
         <script type="text/javascript" src="js/simonGame.js"></script>
     </body>
 </html>
