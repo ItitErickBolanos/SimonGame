@@ -175,3 +175,119 @@ html, body {
     height: 100%;
     margin-left: 50%;
 }
+
+.button-label {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 960px) {
+  .top-left-button {
+      border: 12px solid #333;
+      background: #4CAF50;
+      border-top-left-radius: 100%;
+      width: 150px;
+      height: 150px;
+      display: inline-block;
+      cursor: pointer;
+  }
+
+  .top-right-button {
+      border: 12px solid #333;
+      background: #B71C1C;
+      border-top-right-radius: 100%;
+      width: 150px;
+      height: 150px;
+      display: inline-block;
+      cursor: pointer;
+  }
+
+  .bottom-left-button {
+      border: 12px solid #333;
+      background: #FFC107;
+      border-bottom-left-radius: 100%;
+      width: 150px;
+      height: 150px;
+      display: inline-block;
+      cursor: pointer;
+  }
+
+  .bottom-right-button {
+      border: 12px solid #333;
+      background: #3F51B5;
+      border-bottom-right-radius: 100%;
+      width: 150px;
+      height: 150px;
+      display: inline-block;
+      cursor: pointer;
+  }
+
+  .center-circle {
+      border-radius: 100%;
+      border: 12px solid #333;
+      background: white;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left:0;
+      right:0;
+      margin: auto;
+      text-align: center;
+      font-size: 36px;
+  }
+
+  .counter {
+      border: 2px solid #333;
+      width: 30px;
+      border-radius: 5px;
+      background: #212121;
+  }
+
+  .start-button {
+      background-color: #F44336;
+      border: 2px solid #333;
+      border-radius: 100%;
+      width: 15px;
+      height: 15px;
+      box-shadow: 0px 2px 3px #222;
+      cursor: pointer;
+  }
+
+  .strict-button {
+      background-color: #FFEB3B;
+      border: 2px solid #333;
+      border-radius: 100%;
+      width: 15px;
+      height: 15px;
+      box-shadow: 0px 2px 3px #222;
+      cursor: pointer;
+  }
+
+  .power-switch {
+      display: inline-block;
+      width: 25px;
+      height: 10px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      vertical-align: top;
+      background: #212121;
+      cursor: pointer;
+  }
+
+  .led-off {
+      color: #1A237E;
+      margin: 0;
+      font-size: 20px;
+  }
+
+  .led-on {
+    color: #2196F3;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .button-label {
+    font-size: 12px;
+  }
+}
