@@ -105,6 +105,7 @@ SimonGame.prototype = {
             that.showMoves();
         }, 500);
       } else {
+        that.moveCounter = 1;
         setTimeout(function(){
             that.startGame();
         }, 500);

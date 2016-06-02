@@ -48,7 +48,7 @@ app.controller("gameController", ['$scope', function($scope){
 
   $scope.toggleStrictMode = function(){
      $scope.gameState = $scope.simon.getGameState();
-     if ($scope.gamePower){ 
+     if ($scope.gamePower){
         $scope.strictToggle = !$scope.strictToggle;
         $scope.simon.toggleStrict();
      }
