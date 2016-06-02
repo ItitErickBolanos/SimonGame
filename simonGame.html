@@ -40,7 +40,8 @@
                         <p class="button-label">Start</p>
                     </div>
                     <div class="menu-button">
-                        <div class="strict-button">
+                        <div class="strict-toggle" ng-class="{ 'strict-on' : strictToggle, 'strict-off' : !strictToggle }"></div>
+                        <div class="strict-button" ng-click="toggleStrictMode()">
                         </div>
                         <p class="button-label">Strict</p>
                     </div>

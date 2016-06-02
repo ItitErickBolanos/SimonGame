@@ -129,6 +129,24 @@ html, body {
     cursor: pointer;
 }
 
+.strict-toggle {
+    border-radius: 100%;
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin-left: 33%;
+    margin-bottom: 5px;
+    box-shadow: 0px 1px 2px #222;
+}
+
+.strict-on {
+    background: red;
+}
+
+.strict-off {
+    background: #212121;
+}
+
 .start-button:active {
     box-shadow: 0px 1px 2px #222;
 }

@@ -5,6 +5,8 @@ function SimonGame(){
     this.moveCounter = null;
     this.moveHistory = [];
     this.playerMoves = [];
+    this.lightUpTimeout = null
+    this.lightOffTimeout = null;
     this.GAMEBUTTONS = ["green", "red", "yellow", "blue"];
 
 }
@@ -22,31 +24,43 @@ SimonGame.prototype = {
       return this.moveCounter;
     },
 
+    clearValues: function(){
+      this.gameInProgress = true;
+      this.moveCounter = null;
+      this.moveHistory = [];
+      this.playerMoves = [];
+      if (this.lightUpTimeout != null) {
+          clearTimeout(this.lightUpTimeout);
+          if (this.lightOffTimeout != null) {
+              clearTimeout(this.lightOffTimeout);
+          }
+          $(".button").removeClass("blue green red yellow");
+          this.lightUpTimeout = this.lightOffTimeout = null;
+      }
+    },
+
     switchGameOn: function(){
       this.gameOn = !this.gameOn;
       if(!this.gameOn){
-        this.moveCounter = null;
+          this.clearValues();
       }
       return this.gameOn;
     },
 
     startGame: function(){
-      this.gameInProgress = true;
-      this.moveCounter = null;
-      this.moveHistory = [];
-      this.playerMoves = [];
+      this.clearValues();
       this.generateMoves();
       this.showMoves();
     },
 
-    activateStrict: function(){
+    toggleStrict: function(){
       this.strictMode = !this.strictMode;
     },
 
     generateMoves: function(){
       var randomMove = Math.floor((Math.random() * 4));
-      this.moveCounter = this.moveHistory.length + 1;
       this.moveHistory.push(this.GAMEBUTTONS[randomMove]);
+      this.moveCounter = this.moveHistory.length;
     },
 
     showMoves: function(){
@@ -58,11 +72,11 @@ SimonGame.prototype = {
 
     lightUpButtons: function(i){
       var that = this;
-      setTimeout(function() {
+      this.lightUpTimeout = setTimeout(function() {
         var audio = document.getElementById(that.moveHistory[i] + 'Sound');
         audio.play();
         $("#" + that.moveHistory[i]).addClass(that.moveHistory[i]);
-        setTimeout(function() {
+        that.lightOffTimeout = setTimeout(function() {
             $("#" + that.moveHistory[i]).removeClass(that.moveHistory[i]);
             audio.pause();
             audio.currentTime = 0;
@@ -74,21 +88,26 @@ SimonGame.prototype = {
       this.playerMoves.push(button);
       if (this.moveHistory[this.playerMoves.length - 1] != this.playerMoves[this.playerMoves.length - 1]){
         this.showMistake();
-        return false;
+        return 2;
       }
       if(this.playerMoves.length == this.moveHistory.length){
         this.playerMoves = [];
-        return true;
+        return 1;
       }
-      return false;
+      return 0;
     },
 
     showMistake: function(){
+      var that = this;
       if(!this.strictMode){
         this.playerMoves = [];
-        this.showMoves();
+        setTimeout(function(){
+            that.showMoves();
+        }, 500);
       } else {
-        this.startGame();
+        setTimeout(function(){
+            that.startGame();
+        }, 500);
       }
     },
 
